@@ -15,10 +15,29 @@
 	<servlet>
 		<servlet-name>proxy</servlet-name>
 		<servlet-class>org.mitre.dsmiley.httpproxy.ProxyServlet</servlet-class>
+
+		<!-- This variable must be Dynamic... -->
+		<!--
+		Is necessary to extend the ProxyServlet.
+		-->
+		<init-param>
+			<param-name>targetUri</param-name>
+			<param-value>http://pathfinder-server:8080/api</param-value>
+		</init-param>
+
+		<!--
 		<init-param>
 			<param-name>targetUri</param-name>
 			<param-value>${PATHFINDER_SERVER}</param-value>
 		</init-param>
+		-->
+		<!--
+		<init-param>
+			<param-name>targetUri</param-name>
+			<param-value>http://localhost:8080</param-value>
+		</init-param>
+		-->
+
 		<init-param>
 			<param-name>log</param-name>
 			<param-value>true</param-value>

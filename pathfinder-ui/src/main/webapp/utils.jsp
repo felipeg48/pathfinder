@@ -19,8 +19,10 @@ Utils = {
 //  SERVER: "http://localhost:8080", 
 //  SERVER: "http://pathtest-pathfinder.6923.rh-us-east-1.openshiftapps.com",
 //  SERVER: "${pathfinderUrl}",
+//  SERVER: "http://pathfinder-server:8080",
+
   SERVER: "<%=null!=Controller.getProperty("PATHFINDER_SELF")?Controller.getProperty("PATHFINDER_SELF"):Controller.getProperty("PATHFINDER_SERVER")%>",
-  
+
   chartColors: {
   	"UNKNOWN": "#808080",
 		"RED": "#cc0000",
@@ -34,6 +36,8 @@ Utils = {
 		      results = regex.exec(url);
 		  if (!results) return null;
 		  if (!results[2]) return '';
-		  return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+			var res_1 = decodeURIComponent(results[2].replace(/\+/g, " "));
+		  return res_1;
 		}
 }
